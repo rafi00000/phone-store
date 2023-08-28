@@ -6,9 +6,23 @@ const loadPhone = async(phoneName) =>{
 };
 
 const displayPhones = (phones) =>{
+    console.log(phones);
     const phoneContainer = document.getElementById('phone-container');
     // to clear the phone cards
     phoneContainer.textContent = '';
+    
+    // show all btn functionalities
+    const showAllDiv = document.getElementById('show-all-btn-container');
+    if(phones.length > 12){
+        showAllDiv.classList.remove('hidden');
+        showAllDiv.classList.add('flex', 'justify-center');
+    }
+    else{
+        showAllDiv.classList.add('hidden');
+        showAllDiv.classList.remove('flex', 'justify-center');
+    }
+    // show all btn functionalities ends here
+
     // setting the phone limit
     phones = phones.slice(0, 12);
 
@@ -28,12 +42,26 @@ const displayPhones = (phones) =>{
         `;
         phoneContainer.appendChild(phoneDiv);
     });
+    toggleSpinner(false);
 };
 
 const searchFunction = () =>{
     const inputField = document.getElementById('search-field');
     const inputText = inputField.value;
+    if(inputText === ''){
+        alert('plese put some value');
+    }
+    toggleSpinner(true);
     inputField.value = '';
     loadPhone(inputText);
-};
+}
 
+const toggleSpinner = (isLoading) => {
+    const spinner = document.getElementById('spinnerDiv');
+    if(isLoading){
+        spinner.classList.remove('hidden');
+    }
+    else{
+        spinner.classList.add('hidden');
+    }
+};

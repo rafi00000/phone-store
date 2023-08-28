@@ -9,25 +9,33 @@
 </head>
 <body>
     <header>
-        <h1 class="text-4xl font-bold text-center">Phone shop</h1>
+        <h1 class="text-4xl font-bold text-center bg-black p-5 text-white">Phone shop</h1>
     </header>
 
     <main class="container mx-auto">
 
         <!-- search button here -->
-        <div class="bg-cyan-500 p-5 flex justify-end my-5 rounded-xl">
+        <div class="bg-cyan-500 p-5 flex justify-center lg:justify-end my-5 rounded-xl">
             <div class="flex gap-2">
-                <input type="text" placeholder="Type here" id="search-field" class="input w-full max-w-xs" />
+                <input type="text" placeholder="Search here" id="search-field" class="input w-full max-w-xs" />
                 <button onclick="searchFunction()" class="btn btn-accent text-white">Search</button>
             </div>
         </div>
         
         <!-- this section is for all phones -->
         <section class="my-6">
+            <!-- spinner or loader -->
+            <div id="spinnerDiv" class="text-center my-40 hidden">
+                <span class="loading loading-infinity text-accent w-20"></span>
+            </div>
+            
             <!-- phone main container -->
-            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-9">
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-4">
                 <!-- card 1 -->
             </div>
+
+            <div id="show-all-btn-container" class="my-7 hidden">
+                <button class="btn btn-accent text-white">Load More..</button>
             </div>
         </section>
 
