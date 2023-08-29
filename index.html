@@ -24,6 +24,9 @@
         
         <!-- this section is for all phones -->
         <section class="my-6">
+            <div id="noData" class="text-center hidden">
+                <p class="text-xl font-bold text-red-600">Sorry no data available.....</p>
+            </div>
             <!-- spinner or loader -->
             <div id="spinnerDiv" class="text-center my-40 hidden">
                 <span class="loading loading-infinity text-accent w-20"></span>
@@ -34,8 +37,13 @@
                 <!-- card 1 -->
             </div>
 
+            <!-- modal for phones -->
+            <div id="show-detail-modal">
+                    
+            </div>
+                
             <div id="show-all-btn-container" class="my-7 hidden">
-                <button class="btn btn-accent text-white">Load More..</button>
+                <button id="show-all-btn" class="btn btn-accent text-white">Load More..</button>
             </div>
         </section>
 
